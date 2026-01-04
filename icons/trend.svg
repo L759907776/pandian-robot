@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 上升趋势线 -->
+  <path d="M3 17L9 11L13 15L21 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- 趋势箭头 -->
+  <path d="M21 7L19 9L21 7Z" fill="currentColor"/>
+  
+  <!-- 数据点 -->
+  <circle cx="9" cy="11" r="1.5" fill="currentColor"/>
+  <circle cx="13" cy="15" r="1.5" fill="currentColor"/>
+</svg>

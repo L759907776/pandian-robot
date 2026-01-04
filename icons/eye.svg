@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 眼睛轮廓 -->
+  <path d="M2 12C2 12 6 4 12 4C18 4 22 12 22 12C22 12 18 20 12 20C6 20 2 12 2 12Z" stroke="currentColor" stroke-width="2" fill="none"/>
+  <!-- 瞳孔 -->
+  <circle cx="12" cy="12" r="3" fill="currentColor"/>
+  <!-- 眼睛中心点 -->
+  <circle cx="12" cy="12" r="1" fill="white"/>
+</svg>
