@@ -1,0 +1,81 @@
+/* 二维码区域样式 */
+.contact-qr {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    flex: 0 0 240px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-title {
+    font-size: 18px;
+    color: #0056b3;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.qr-image {
+    width: 160px;
+    height: 160px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.qr-description {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin: 0;
+}
+
+/* 响应式设计 - 移动端布局调整 */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+    
+    .contact-info,
+    .contact-qr {
+        flex: none;
+        width: 100%;
+    }
+    
+    .contact-qr {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .qr-image {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-content {
+        gap: 15px;
+    }
+    
+    .qr-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .qr-title {
+        font-size: 16px;
+    }
+    
+    .qr-description {
+        font-size: 12px;
+    }
+}

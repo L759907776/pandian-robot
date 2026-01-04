@@ -1,0 +1,547 @@
+<!-- 文档类型声明：HTML5标准 -->
+<!DOCTYPE html>
+<!-- HTML根元素，语言设置为中文简体 -->
+<html lang="zh-CN">
+<!-- 头部区域：包含页面元信息、标题和外部资源引用 -->
+<head>
+    <!-- 字符编码声明：UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- 视口设置：适配移动设备，禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 页面标题：显示在浏览器标签页上 -->
+    <title>数字鲸鱼 - 盘点机器人 | 智能仓储智能盘点解决方案</title>
+    <!-- 外部CSS样式文件引用 -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<!-- 头部导航区域：固定在页面顶部，包含Logo和导航菜单 -->
+<header class="header">
+    <div class="container">
+        <!-- Logo区域：包含图片和文字 -->
+        <div class="logo">
+            <img src="images/logo.png" alt="">
+            <div class="logo-text">仓储盘点机器人</div>
+        </div>
+        
+        <!-- 导航菜单：直接显示在导航栏中 -->
+        <nav class="nav-container">
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#banner">首页</a></li>
+                <li><a href="#advantages">核心优势</a></li>
+                <li><a href="#product">产品介绍</a></li>
+                <li><a href="#scenarios">应用场景</a></li>
+                <li><a href="#params">产品参数</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+            
+            <!-- 立即咨询按钮：突出显示，引导用户联系 -->
+            <a href="#contact" class="contact-btn">立即咨询</a>
+        </nav>
+        
+        <!-- 移动端菜单按钮：在小屏幕上显示 -->
+        <div class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+<!-- 首屏Banner区域：全屏视觉展示，吸引用户注意力 -->
+<section class="banner" id="banner">
+    <!-- 轮播图容器 -->
+    <div class="banner-slider">
+        <!-- 轮播项1 -->
+        <div class="banner-slide active" style="background-image: url('images/lunbo1.png');">
+            <div class="container banner-content">
+                <!-- 主标题：突出核心解决方案 -->
+                <h1 class="banner-title">智能仓储盘点一站式解决方案</h1>
+                <!-- 副标题：说明产品核心优势 -->
+                <p class="banner-desc">RFID+AI视觉+激光雷达多模态融合<br>全自主研发，精准适配企业仓储场景</p>
+                <!-- 行动召唤按钮：引导用户了解产品 -->
+                <a href="#product" class="banner-cta">了解产品</a>
+            </div>
+        </div>
+        <!-- 轮播项2 -->
+        <div class="banner-slide" style="background-image: url('images/lunbo2.png');">
+            <div class="container banner-content">
+                <h1 class="banner-title">高效智能盘点 提升仓储管理水平</h1>
+                <p class="banner-desc">自动化盘点流程，减少人工成本，提高盘点准确性<br>实时数据同步，支持远程监控和管理</p>
+                <a href="#advantages" class="banner-cta">了解优势</a>
+            </div>
+        </div>
+        <!-- 轮播项3 -->
+        <div class="banner-slide" style="background-image: url('images/lunbo3.jpg');">
+            <div class="container banner-content">
+                <h1 class="banner-title">全自主研发 可靠稳定</h1>
+                <p class="banner-desc">软件控制+硬件生产全自主<br>24小时不间断作业，适应各种复杂环境</p>
+                <a href="#contact" class="banner-cta">联系我们</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 轮播指示器 -->
+    <div class="banner-indicators">
+        <button class="indicator active" data-slide="0"></button>
+        <button class="indicator" data-slide="1"></button>
+        <button class="indicator" data-slide="2"></button>
+    </div>
+    
+    <!-- 轮播控制按钮 -->
+    <button class="banner-control prev" id="prevSlide">‹</button>
+    <button class="banner-control next" id="nextSlide">›</button>
+</section>
+
+<!-- 核心优势区域：以图文并茂的卡片形式展示产品的主要优势 -->
+<section class="section advantages" id="advantages">
+    <div class="container">
+        <!-- 区域标题 -->
+        <h2 class="section-title">核心优势</h2>
+        <!-- 副标题：简要说明产品技术特色 -->
+        <p class="section-subtitle">融合多项前沿技术，为仓储提供智能化解决方案</p>
+        
+        <!-- 优势列表：响应式网格布局 -->
+        <div class="advantage-grid">
+            <!-- 优势项1：多模态盘点技术 -->
+            <div class="advantage-card">
+                <div class="advantage-image">
+                    <img src="images/youshi1.png" alt="多模态技术融合" class="advantage-img">
+                    <div class="advantage-overlay">
+                        <!-- <span class="advantage-number">01</span> -->
+                    </div>
+                </div>
+                <div class="advantage-content">
+                    <h3 class="advantage-title">多模态盘点技术</h3>
+                    <p class="advantage-tag">RFID + AI视觉 + 激光雷达</p>
+                    <p class="advantage-desc">三模态技术深度融合，突破单一技术局限。RFID提供精准标签识别，AI视觉实现智能识别验证，激光雷达完成体积测量，形成全方位立体化盘点体系。</p>
+                    <div class="advantage-features">
+                        <span class="feature-item">精准识别</span>
+                        <span class="feature-item">智能验证</span>
+                        <span class="feature-item">立体测量</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 优势项2：企业系统深度适配 -->
+            <div class="advantage-card">
+                <div class="advantage-image">
+                    <img src="images/youshi2.png" alt="企业系统深度适配" class="advantage-img">
+                    <div class="advantage-overlay">
+                        <!-- <span class="advantage-number">02</span> -->
+                    </div>
+                </div>
+                <div class="advantage-content">
+                    <h3 class="advantage-title">企业系统深度适配</h3>
+                    <p class="advantage-tag">无缝对接 + 定制开发</p>
+                    <p class="advantage-desc">深度对接企业现有 WMS、ERP 等仓储管理系统，实现数据实时同步。支持企业个性化业务流程定制开发，确保系统兼容性与数据安全性。</p>
+                    <div class="advantage-features">
+                        <span class="feature-item">实时同步</span>
+                        <span class="feature-item">数据安全</span>
+                        <span class="feature-item">流程定制</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 优势项3：智能导航定位 -->
+            <div class="advantage-card">
+                <div class="advantage-image">
+                    <img src="images/youshi3.png" alt="智能导航技术" class="advantage-img">
+                    <div class="advantage-overlay">
+                        <!-- <span class="advantage-number">03</span> -->
+                    </div>
+                </div>
+                <div class="advantage-content">
+                    <h3 class="advantage-title">智能导航定位</h3>
+                    <p class="advantage-tag">SLAM + 无需贴码</p>
+                    <p class="advantage-desc">基于SLAM技术的自主导航系统，无需粘贴定位标签即可实现厘米级精确定位。适应复杂仓储环境，灵活应对货架变动和临时障碍物。</p>
+                    <div class="advantage-features">
+                        <span class="feature-item">±10cm精度</span>
+                        <span class="feature-item">自主导航</span>
+                        <span class="feature-item">环境适应</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 优势项4：全栈自主研发 -->
+            <div class="advantage-card">
+                <div class="advantage-image">
+                    <img src="images/youshi4.png" alt="全栈研发能力" class="advantage-img">
+                    <div class="advantage-overlay">
+                        <!-- <span class="advantage-number">04</span> -->
+                    </div>
+                </div>
+                <div class="advantage-content">
+                    <h3 class="advantage-title">全栈自主研发</h3>
+                    <p class="advantage-tag">软硬件 + 生产制造</p>
+                    <p class="advantage-desc">从软件算法到硬件设计，从控制程序到生产制造，全链路自主研发。具备快速响应能力，可提供及时专业的技术支持和售后服务。</p>
+                    <div class="advantage-features">
+                        <span class="feature-item">快速响应</span>
+                        <span class="feature-item">专业支持</span>
+                        <span class="feature-item">持续优化</span>
+                    </div>
+                </div>
+            </div>
+
+             <!-- 优势项5：全栈自主研发 -->
+            <div class="advantage-card">
+                <div class="advantage-image">
+                    <img src="images/youshi5.png" alt="智能续航管理" class="advantage-img">
+                    <div class="advantage-overlay">
+                        <!-- <span class="advantage-number">05</span> -->
+                    </div>
+                </div>
+                <div class="advantage-content">
+                    <h3 class="advantage-title">智能续航管理</h3>
+                    <p class="advantage-tag">自动回充 + 长续航 + 安全电池</p>
+                    <p class="advantage-desc">搭载磷酸铁锂安全电池，支持低电量自动回充（充电 6h 续航 6h / 待机 20h），适配仓储长时间连续盘点作业；电池具备不燃不爆特性，符合工业场景安全标准。</p>
+                    <div class="advantage-features">
+                        <span class="feature-item">低电回充</span>
+                        <span class="feature-item">长时作业</span>
+                        <span class="feature-item">安全电池</span>
+                    </div>
+                </div>
+                
+            </div>
+
+               <!-- 优势项6：全栈自主研发 -->
+            <div class="advantage-card">
+                <div class="advantage-image">
+                    <img src="images/youshi6.png" alt="全场景物料适配" class="advantage-img">
+                    <div class="advantage-overlay">
+                        <!-- <span class="advantage-number">06</span> -->
+                    </div>
+                </div>
+                <div class="advantage-content">
+                    <h3 class="advantage-title">全场景物料适配</h3>
+                    <p class="advantage-tag">多物料识别 + 无标签盘点</p>
+                    <p class="advantage-desc">结合视觉识别与激光点云技术，适配企业仓储铁构件、袋装物资、线缆保护管等特殊物料，无需依赖标签即可完成计数、体积 / 重量估算，覆盖堆垛、货架等复杂存放形态。</p>
+                    <div class="advantage-features">
+                        <span class="feature-item">特殊物料</span>
+                        <span class="feature-item">无标签盘点</span>
+                        <span class="feature-item">全类型覆盖</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 产品介绍区域：以图文结合的方式展示产品的主要功能模块 -->
+<section class="section product" id="product">
+    <div class="container">
+        <!-- 区域标题 -->
+        <h2 class="section-title">产品介绍</h2>
+        <!-- 产品内容列表：响应式布局，在移动端垂直排列，在桌面端左右交替排列 -->
+        <div class="product-content">
+            <!-- 产品项1：灵活定制 -->
+            <div class="product-item">
+                <!-- 产品文字描述 -->
+                <div class="product-text">
+                    <h3 class="product-title">灵活定制</h3>
+                    <p class="product-desc">采用高端芯片，配备3-4个可调天线，4米伸缩杆设计，支持动态参数调整，适配不同仓储高度需求，有效解决金属干扰、物料摆放角度等问题。</p>
+                </div>
+                <!-- 产品图片：带悬停缩放效果 -->
+                <div class="product-img img-hover">
+                    <img src="images/dingzhi.png" alt="RFID天线">
+                </div>
+            </div>
+            <!-- 产品项2：视觉识别与验证 -->
+            <div class="product-item">
+                <div class="product-text">
+                    <h3 class="product-title">视觉识别与验证</h3>
+                    <p class="product-desc">AI高清云台摄像头，支持特殊物料识别、拍照留证，配备补光红外功能，兼容二维码读取，提升盘点准确性，满足迎检场景留证需求。</p>
+                </div>
+                <div class="product-img img-hover">
+                    <img src="images/shijue.png" alt="视觉摄像头">
+                </div>
+            </div>
+            <!-- 产品项3：激光雷达体积测量 -->
+            <div class="product-item">
+                <div class="product-text">
+                    <h3 class="product-title">激光雷达体积测量</h3>
+                    <p class="product-desc">点云建模技术，实现体积/重量/数量估算，覆盖铁构件、箱装物料等多种特殊物料，无需依赖标签，解决特殊物料盘点难题。</p>
+                </div>
+                <div class="product-img img-hover">
+                    <img src="images/leida.png" alt="激光雷达">
+                </div>
+            </div>
+            <!-- 产品项4：灵活定制 -->
+            <div class="product-item">
+                <!-- 产品文字描述 -->
+                <div class="product-text">
+                    <h3 class="product-title">模块化灵活适配</h3>
+                    <p class="product-desc">采用标准化模块化设计，核心部件（RFID 天线 / 视觉模块）支持快速拆装，可灵活搭载于堆垛机、四向车等仓储设备；同时支持功能模块迭代升级，无需整体更换设备即可扩展新能力，适配企业仓储不同作业设备与未来需求。</p>
+                </div>
+                <!-- 产品图片：带悬停缩放效果 -->
+                <div class="product-img img-hover">
+                    <img src="images/shipei.png" alt="RFID天线">
+                </div>
+            </div>
+            <!-- 产品项5：视觉识别与验证 -->
+            <div class="product-item">
+                <div class="product-text">
+                    <h3 class="product-title">智能数据可视化管理</h3>
+                    <p class="product-desc">内置数据采集与分析系统，可对接企业仓储数字孪生平台，实时可视化展示盘点进度、物料数据、设备状态；支持自动生成符合企业规范的盘点报告（含物料台账、异常数据标注），一键导出满足迎检、台账归档需求。</p>
+                </div>
+                <div class="product-img img-hover">
+                    <img src="images/keshihua.png" alt="视觉摄像头">
+                </div>
+            </div>
+            <!-- 产品项6：激光雷达体积测量 -->
+            <div class="product-item">
+                <div class="product-text">
+                    <h3 class="product-title">全场景安全防护</h3>
+                    <p class="product-desc">配备多组红外避障传感器 + 声光报警系统，作业时可自动识别人员、货架等障碍物并减速 / 绕行；支持物理急停按钮 + 远程暂停功能，同时符合工业电气安全标准，适配企业仓储 “人机混场 / 设备密集” 的作业环境。</p>
+                </div>
+                <div class="product-img img-hover">
+                    <img src="images/anquan.png" alt="激光雷达">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 应用场景区域：以网格卡片形式展示产品的主要应用场景 -->
+<section class="section scenarios" id="scenarios">
+    <div class="container">
+        <!-- 区域标题 -->
+        <h2 class="section-title">应用场景</h2>
+        <!-- 场景列表：响应式网格布局 -->
+        <div class="scenario-list">
+            <!-- 场景项1：企业仓储盘点 -->
+            <div class="scenario-item">
+                <!-- 场景图片：带悬停缩放效果 -->
+                <img src="images/scenario1.png" alt="企业仓储盘点" class="scenario-img img-hover">
+                <!-- 场景文字描述 -->
+                <div class="scenario-text">
+                    <h3 class="scenario-title">企业仓储盘点</h3>
+                    <p class="scenario-desc">适配横梁货架、堆场等场景</p>
+                </div>
+            </div>
+            <!-- 场景项2：迎检场景 -->
+            <div class="scenario-item">
+                <img src="images/scenario2.png" alt="迎检场景" class="scenario-img img-hover">
+                <div class="scenario-text">
+                    <h3 class="scenario-title">迎检场景</h3>
+                    <p class="scenario-desc">数据可视化，快速生成报告</p>
+                </div>
+            </div>
+            <!-- 场景项3：黑灯仓库 -->
+            <div class="scenario-item">
+                <img src="images/scenario3.png" alt="黑灯仓库" class="scenario-img img-hover">
+                <div class="scenario-text">
+                    <h3 class="scenario-title">黑灯仓库</h3>
+                    <p class="scenario-desc">24小时无人化盘点</p>
+                </div>
+            </div>
+            <!-- 场景项4：临时库位 -->
+            <div class="scenario-item">
+                <img src="images/scenario4.png" alt="临时库位" class="scenario-img img-hover">
+                <div class="scenario-text">
+                    <h3 class="scenario-title">临时库位</h3>
+                    <p class="scenario-desc">动态适配库位变动</p>
+                </div>
+            </div>
+            <!-- 场景项5：医药冷链仓库 -->
+            <div class="scenario-item">
+                <img src="images/scenario5.png" alt="医药冷链仓库" class="scenario-img img-hover">
+                <div class="scenario-text">
+                    <h3 class="scenario-title">医药冷链仓库</h3>
+                    <p class="scenario-desc">温控环境下精准盘点 + 温湿度同步记录</p>
+                </div>
+            </div>
+            <!-- 场景项6：危险品仓库 -->
+            <div class="scenario-item">
+                <img src="images/scenario6.png" alt="危险品仓库" class="scenario-img img-hover">
+                <div class="scenario-text">
+                    <h3 class="scenario-title">危险品仓库</h3>
+                    <p class="scenario-desc">防爆无人化作业 + 安全合规盘点</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 产品参数区域：以表格形式展示产品的详细技术参数 -->
+<section class="section params" id="params">
+    <div class="container">
+        <!-- 区域标题 -->
+        <h2 class="section-title">产品参数</h2>
+        <!-- 产品图片和参数表格的容器 -->
+        <div class="params-content">
+            <!-- 产品图片展示区域 -->
+            <div class="product-image-container">
+                <img src="images/chanpin.png" alt="产品实物图" class="product-image">
+                <!-- 图片描述文字 -->
+                <p class="product-image-desc">产品实物展示</p>
+            </div>
+            <!-- 参数表格：清晰展示各项技术指标 -->
+            <div class="param-table-container">
+                <table class="param-table">
+            <!-- 表格头部 -->
+            <thead>
+                <tr>
+                    <th>参数类别</th>
+                    <th>参数值</th>
+                </tr>
+            </thead>
+            <!-- 表格主体：包含详细参数 -->
+            <tbody>
+                <tr>
+                    <td>型号</td>
+                    <td>DW-MIR-01</td>
+                </tr>
+                <tr>
+                    <td>净重</td>
+                    <td>约115KG</td>
+                </tr>
+                <tr>
+                    <td>导航精度</td>
+                    <td>±10cm</td>
+                </tr>
+                <tr>
+                    <td>天线增益</td>
+                    <td>9dBi</td>
+                </tr>
+                <tr>
+                    <td>读写距离</td>
+                    <td>15m</td>
+                </tr>
+                <tr>
+                    <td>续航时间</td>
+                    <td>6小时（作业）/20小时（待机）</td>
+                </tr>
+                <tr>
+                    <td>充电方式</td>
+                    <td>自动回充，直充</td>
+                </tr>
+                <tr>
+                    <td>电机驱动</td>
+                    <td>5.5寸轮毂电机</td>
+                </tr>
+                <tr>
+                    <td>适配器</td>
+                    <td>输入：AC110-240V 50-60HZ   输出：DC43.2V-5A</td>
+                </tr>
+                <tr>
+                    <td>充电桩参数</td>
+                    <td>过流保护、智能断电、输出额定电压：DC43.2V  输出额定电流：5A</td>
+                </tr>
+            </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- 参数手册下载区域 -->
+        <div class="param-download">
+            <a href="javascript:;" class="param-download-btn">下载完整参数手册</a>
+        </div>
+    </div>
+</section>
+
+<!-- 联系我们区域：包含联系方式和在线咨询表单 -->
+<section class="section contact" id="contact">
+    <div class="container">
+        <!-- 区域标题 -->
+        <h2 class="section-title">联系我们</h2>
+        <div class="contact-content">
+            <!-- 联系方式信息 -->
+            <div class="contact-info">
+                <h3 class="contact-info-title">联系方式</h3>
+                <div class="contact-info-list">
+                    <!-- 工作时间 -->
+                    <div class="contact-info-item">
+                        <span class="contact-info-icon iconfont icon-phone"></span>
+                        <span>周一至周五（9:00-18:00）</span>
+                    </div>
+                    <!-- 电话信息 -->
+                    <div class="contact-info-item">
+                        <span class="contact-info-icon iconfont icon-phone"></span>
+                        <span>联系电话：0531-81766608</span>
+                    </div>
+                    <!-- 邮箱信息 -->
+                    <div class="contact-info-item">
+                        <span class="contact-info-icon iconfont icon-email"></span>
+                        <span>邮箱：services@digitalwhale.com.cn</span>
+                    </div>
+                    <!-- 地址信息 -->
+                    <div class="contact-info-item">
+                        <span class="contact-info-icon iconfont icon-address"></span>
+                        <span>地址：山东省济南市历下区文化东路55号泰山科技大厦7楼整层</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 移除在线咨询表单 -->
+        </div>
+    </div>
+</section>
+
+<!-- 流量分析区域：展示网站访问统计数据 -->
+<section class="section traffic-analytics" id="analytics">
+    <div class="container">
+        <!-- 区域标题 -->
+        <h2 class="section-title">流量分析</h2>
+        <!-- 统计卡片容器 -->
+        <div class="traffic-stats">
+            <!-- 今日访问量 -->
+            <div class="traffic-stat-card">
+                <div class="stat-icon">
+                    <img src="icons/eye.svg" alt="今日访问" class="stat-icon-img">
+                </div>
+                <div class="stat-content">
+                    <h3 class="stat-number" id="today-visitors">2,847</h3>
+                    <p class="stat-label">今日访问</p>
+                </div>
+            </div>
+            
+            <!-- 总访问量 -->
+            <div class="traffic-stat-card">
+                <div class="stat-icon">
+                    <img src="icons/chart.svg" alt="总访问量" class="stat-icon-img">
+                </div>
+                <div class="stat-content">
+                    <h3 class="stat-number" id="total-visitors">125,630</h3>
+                    <p class="stat-label">总访问量</p>
+                </div>
+            </div>
+            
+            <!-- 在线用户 -->
+            <div class="traffic-stat-card">
+                <div class="stat-icon">
+                    <img src="icons/user.svg" alt="在线用户" class="stat-icon-img">
+                </div>
+                <div class="stat-content">
+                    <h3 class="stat-number" id="online-users">142</h3>
+                    <p class="stat-label">在线用户</p>
+                </div>
+            </div>
+            
+            <!-- 访问趋势 -->
+            <div class="traffic-stat-card">
+                <div class="stat-icon">
+                    <img src="icons/trend.svg" alt="本周趋势" class="stat-icon-img">
+                </div>
+                <div class="stat-content">
+                    <h3 class="stat-number" id="trend-percentage">+15.2%</h3>
+                    <p class="stat-label">本周趋势</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚区域：包含网站版权信息和公司简介 -->
+<footer class="footer">
+    <div class="container footer-content">
+        <!-- 公司简介 -->
+        <p class="footer-text">数字鲸鱼 - 工业智能仓储解决方案服务商</p>
+        <!-- 版权信息 -->
+        <p class="footer-copyright">© 2025 数字鲸鱼 版权所有</p>
+    </div>
+</footer>
+
+<!-- 外部JavaScript文件引用：包含网站的所有交互功能 -->
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1476 @@
+﻿/* 全局重置 & 基础样式 - 贴合参考站简约商务风 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", "Microsoft Yahei", sans-serif;
+}
+body {
+    color: #333;
+    background: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+ul, li {
+    list-style: none;
+}
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+    transition: all 0.3s ease;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.section {
+    padding: 40px 0;
+}
+.section-title {
+    font-size: 22px;
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    position: relative;
+}
+.section-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #0056b3;
+    margin: 10px auto 0;
+}
+
+/* 导航栏 - 参考站简洁固定导航 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    z-index: 999;
+    padding: 15px 0;
+    height: 75x;
+    box-sizing: border-box;
+    /* 
+     * 首屏导航栏隐藏效果 - 华沿机器人风格
+     * 初始状态：完全透明，向上隐藏
+     * 显示状态：通过JS添加.header-visible类触发
+     */
+    opacity: 0; /* 初始透明度为0，隐藏导航栏 */
+    transform: translateY(-100%); /* 向上移动自身高度，完全隐藏在视口外 */
+    transition: all 0.3s ease; /* 平滑过渡动画 */
+}
+
+/* 
+ * 导航栏显示状态 - 滚动后显示
+ * 通过JavaScript动态添加这个类名来实现显示效果
+ */
+.header.header-visible {
+    opacity: 1; /* 显示导航栏 */
+    transform: translateY(0); /* 回到正常位置 */
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 100%;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    white-space: nowrap;
+}
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+}
+.logo-text {
+    font-size: 16px;
+    color: #0056b3;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* 导航容器：包含导航菜单和立即咨询按钮 */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex: 1;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+/* 导航菜单：水平排列，均匀分布 */
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: static;
+    width: auto;
+    height: 100%;
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+    transition: none;
+}
+
+/* 导航菜单项 */
+.nav-menu li {
+    padding: 0;
+    border-bottom: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* 导航菜单链接 */
+.nav-menu li a {
+    font-size: 14px;
+    color: #333;
+    padding: 8px 0;
+    position: relative;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+/* 导航菜单链接悬停效果 */
+.nav-menu li a:hover {
+    color: #0056b3;
+    padding-left: 0;
+}
+
+/* 立即咨询按钮 */
+.contact-btn {
+    display: inline-block;
+    background: #0056b3;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-top: 0;
+    white-space: nowrap;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background: #004085;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 86, 179, 0.3);
+}
+
+/* 移动端菜单按钮：默认隐藏 */
+.menu-btn {
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.menu-btn span:nth-child(1) {
+    top: 6px;
+}
+
+.menu-btn span:nth-child(2) {
+    top: 14px;
+}
+
+.menu-btn span:nth-child(3) {
+    bottom: 6px;
+}
+
+/* 响应式设计：中等屏幕上优化间距 */
+@media (max-width: 1024px) {
+    .nav-container {
+        gap: 20px;
+    }
+    
+    .nav-menu {
+        gap: 20px;
+    }
+    
+    .logo {
+        margin-right: 20px;
+    }
+    
+    .logo-text {
+        font-size: 15px;
+    }
+    
+    .nav-menu li a {
+        font-size: 13px;
+    }
+    
+    .contact-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* 响应式设计：小屏幕上显示汉堡菜单 */
+@media (max-width: 768px) {
+    .header {
+        height: auto;
+        padding: 10px 0;
+    }
+    
+    .header .container {
+        flex-wrap: wrap;
+    }
+    
+    /* 导航容器垂直排列 */
+    .nav-container {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px 0;
+        height: auto;
+        border-top: 1px solid #eee;
+        margin-top: 10px;
+    }
+    
+    /* 显示移动端菜单按钮 */
+    .menu-btn {
+        display: block;
+    }
+    
+    /* 移动端导航菜单样式 */
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        width: 100%;
+        height: auto;
+    }
+    
+    /* 移动端导航菜单项 */
+    .nav-menu li {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* 移动端导航菜单链接 */
+    .nav-menu li a {
+        display: block;
+        padding: 12px 0;
+        width: 100%;
+        font-size: 15px;
+    }
+    
+    /* 移动端立即咨询按钮 */
+    .contact-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    /* 显示激活的导航容器 */
+    .nav-container.active {
+        display: flex;
+    }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+    .logo {
+        margin-right: 15px;
+    }
+    
+    .logo img {
+        width: 35px;
+        height: 35px;
+        margin-right: 6px;
+    }
+    
+    .logo-text {
+        font-size: 14px;
+    }
+}
+
+/* ========================================
+   首屏Banner区域 - 轮播展示模块
+   位置：d:\AiCodeTest\pandian2\css\style.css
+   功能：创建全屏轮播展示效果，吸引用户注意力
+   ======================================== */
+
+/* 
+ * 轮播Banner主容器 - 首屏完整展示优化
+ * 设计理念：
+ * 1. 使用视口高度单位确保首屏完整显示
+ * 2. 减去导航栏高度，避免内容被遮挡
+ * 3. 设置合理的高度范围，适应不同屏幕尺寸
+ */
+.banner {
+    /* 
+     * 轮播Banner主容器 - 配合隐藏导航栏的首屏沉浸式体验
+     * 设计理念：
+     * 1. 导航栏隐藏时，banner延伸到页面顶部
+     * 2. 导航栏显示时，banner内容不被遮挡
+     * 3. 确保在各种屏幕尺寸下都能完整显示
+     */
+    margin-top: 0; /* 导航栏隐藏时，banner延伸到顶部 */
+    height: 100vh; /* 使用完整视口高度，实现沉浸式体验 */
+    min-height: 600px; /* 提高最小高度，确保内容完整显示 */
+    max-height: none; /* 移除最大高度限制，让内容完全适配视口 */
+    display: flex; /* 使用Flexbox布局，方便内容居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    color: #fff; /* 默认文字颜色为白色 */
+    text-align: center; /* 文字居中对齐 */
+    position: relative; /* 相对定位，为轮播项提供定位参考 */
+    overflow: hidden; /* 隐藏溢出的轮播项 */
+}
+
+/* 
+ * 导航栏显示时的banner调整 - 避免内容被导航栏遮挡
+ * 当导航栏显示时，需要调整banner的内容区域
+ */
+.header.header-visible + .banner {
+    margin-top: 80px; /* 预留导航栏高度 */
+    height: calc(100vh - 80px); /* 减去导航栏高度 */
+}
+
+/* 
+ * 轮播图容器 - 所有轮播项的父容器
+ * 负责管理所有轮播项的位置和层级关系
+ */
+.banner-slider {
+    position: absolute; /* 绝对定位，覆盖整个Banner区域 */
+    top: 0; /* 顶部对齐 */
+    left: 0; /* 左侧对齐 */
+    width: 100%; /* 宽度100% */
+    height: 100%; /* 高度100% */
+}
+
+/* 
+ * 轮播项 - 单个轮播内容单元
+ * 使用背景图片实现轮播效果
+ * 通过opacity属性控制显示/隐藏
+ */
+.banner-slide {
+    position: absolute; /* 绝对定位，所有项重叠在一起 */
+    top: 0; /* 顶部对齐 */
+    left: 0; /* 左侧对齐 */
+    width: 100%; /* 宽度100% */
+    height: 100%; /* 高度100% */
+    background-size: cover; /* 背景图片覆盖整个容器 */
+    background-position: center center; /* 居中显示，避免裁剪关键内容 */
+    background-repeat: no-repeat; /* 背景图片不重复 */
+    opacity: 0; /* 默认隐藏，通过active类显示 */
+    transition: opacity 0.5s ease; /* 透明度变化动画，时长0.5秒 */
+    display: flex; /* 使用Flexbox布局，内容居中 */
+    align-items: center;
+    /* 添加图片预加载优化 */
+    background-color: #0056b3; /* 备用背景色 */
+}
+
+/* 响应式背景图片优化 */
+@media (max-width: 768px) {
+    .banner-slide {
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-slide {
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+/* 响应式轮播图优化 - 确保首屏完整展示 */
+@media (max-width: 1200px) {
+    .banner {
+        height: 100vh; /* 导航栏隐藏时使用完整视口高度 */
+        min-height: 580px; /* 提高平板端最小高度 */
+        max-height: none; /* 移除最大高度限制 */
+        margin-top: 0;
+    }
+    
+    .header.header-visible + .banner {
+        margin-top: 80px; /* 导航栏显示时预留高度 */
+        height: calc(100vh - 80px); /* 减去导航栏高度 */
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 100vh; /* 导航栏隐藏时使用完整视口高度 */
+        min-height: 550px; /* 提高移动端最小高度，确保内容完整 */
+        max-height: none; /* 移除最大高度限制 */
+        margin-top: 0;
+    }
+    
+    .header.header-visible + .banner {
+        margin-top: 80px; /* 导航栏显示时预留高度 */
+        height: calc(100vh - 80px); /* 减去导航栏高度 */
+    }
+    
+    .banner-title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    
+    .banner-desc {
+        font-size: 14px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    
+    .banner-cta {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+    
+    .banner-indicators {
+        bottom: 15px;
+        gap: 8px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .indicator.active {
+        width: 25px;
+    }
+    
+    .banner-control {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+    
+    .banner-control.prev {
+        left: 15px;
+    }
+    
+    .banner-control.next {
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: 100vh; /* 导航栏隐藏时使用完整视口高度 */
+        min-height: 520px; /* 提高小屏最小高度，确保内容完整 */
+        max-height: none; /* 移除最大高度限制 */
+        margin-top: 0;
+    }
+    
+    .header.header-visible + .banner {
+        margin-top: 80px; /* 导航栏显示时预留高度 */
+        height: calc(100vh - 80px); /* 减去导航栏高度 */
+    }
+    
+    .banner-content {
+        padding: 0 15px;
+    }
+    
+    .banner-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .banner-desc {
+        font-size: 13px;
+        margin-bottom: 18px;
+        line-height: 1.5;
+    }
+    
+    .banner-cta {
+        padding: 7px 18px;
+        font-size: 13px;
+    }
+    
+    .banner-indicators {
+        bottom: 10px;
+        gap: 6px;
+    }
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .indicator.active {
+        width: 20px;
+    }
+    
+    .banner-control {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+    
+    .banner-control.prev {
+        left: 10px;
+    }
+    
+    .banner-control.next {
+        right: 10px;
+    }
+}
+
+/* 超小屏幕优化 - 确保首屏完整显示 */
+@media (max-width: 360px) {
+    .banner {
+        height: 100vh; /* 导航栏隐藏时使用完整视口高度 */
+        min-height: 500px; /* 提高最小高度，确保内容完整 */
+        max-height: none; /* 移除最大高度限制，让内容完全适配视口 */
+        margin-top: 0;
+    }
+    
+    .header.header-visible + .banner {
+        margin-top: 80px; /* 导航栏显示时预留高度 */
+        height: calc(100vh - 80px); /* 减去导航栏高度 */
+    }
+    
+    .banner-content {
+        padding: 0 15px;
+    }
+    
+    .banner-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .banner-desc {
+        font-size: 12px;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+    
+    .banner-cta {
+        padding: 6px 16px;
+        font-size: 12px;
+    }
+    
+    .banner-indicators {
+        bottom: 8px;
+        gap: 5px;
+    }
+    
+    .indicator {
+        width: 7px;
+        height: 7px;
+    }
+    
+    .indicator.active {
+        width: 18px;
+    }
+    
+    .banner-control {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+    }
+    
+    .banner-control.prev {
+        left: 8px;
+    }
+    
+    .banner-control.next {
+        right: 8px;
+    }
+}
+
+/* 激活的轮播项 */
+.banner-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* 
+ * 轮播内容区域 - 文字和按钮的容器
+ * 位置：d:\AiCodeTest\pandian2\css\style.css (行 527-531)
+ * 确保文字内容在背景图片之上显示
+ */
+.banner-content {
+    padding: 0 20px; /* 左右内边距，防止文字贴边 */
+    position: relative; /* 相对定位，配合z-index使用 */
+    z-index: 2; /* 确保内容在背景图片之上 */
+}
+
+/* 
+ * 轮播图主标题 - 突出核心信息
+ * 位置：d:\AiCodeTest\pandian2\css\style.css (行 532-536)
+ * 字体大小适中，确保在各种设备上清晰可读
+ */
+.banner-title {
+    font-size: 50px; /* 标题字体大小 */
+    margin-bottom: 15px; /* 与下方描述文字的间距 */
+    font-weight: 600; /* 字体加粗程度 */
+}
+
+/* 
+ * 轮播图描述文字 - 补充说明信息
+ * 位置：d:\AiCodeTest\pandian2\css\style.css (行 537-542)
+ * 行高和最大宽度优化，提升阅读体验
+ */
+.banner-desc {
+    font-size: 27px; /* 描述文字大小 */
+    margin-bottom: 25px; /* 与下方按钮的间距 */
+    line-height: 1.8; /* 行高，确保多行文字易读 */
+}
+
+/* 
+ * 轮播图行动按钮 - 引导用户进行下一步操作
+ * 位置：d:\AiCodeTest\pandian2\css\style.css (行 543-551)
+ * 采用白色设计，保持视觉层次
+ */
+.banner-cta {
+    display: inline-block; /* 行内块元素 */
+    background: #fff; /* 白色背景 */
+    color: #0056b3; /* 蓝色文字 */
+    padding: 10px 25px; /* 按钮内边距 */
+    border-radius: 4px; /* 圆角设计 */
+    font-size: 16px; /* 字体大小 */
+    font-weight: 600; /* 字体加粗 */
+    z-index: 2; /* 确保在最上层 */
+}
+
+/* 
+ * 轮播图按钮悬停效果 - 提升交互体验
+ * 位置：d:\AiCodeTest\pandian2\css\style.css (行 552-554)
+ */
+.banner-cta:hover {
+    background: #f8f9fa; /* 悬停时背景变为浅灰色 */
+}
+
+/* 
+ * 轮播指示器容器 - 显示当前位置
+ * 位置：d:\AiCodeTest\pandian2\css\style.css (行 575-585)
+ * 位于Banner底部中央，方便用户了解当前轮播进度
+ */
+.banner-indicators {
+    position: absolute; /* 绝对定位 */
+    bottom: 20px; /* 距离底部20px */
+    left: 50%; /* 水平居中 */
+    transform: translateX(-50%); /* 精确水平居中 */
+    display: flex; /* 使用Flexbox布局 */
+    gap: 10px; /* 指示器之间的间距 */
+    z-index: 3; /* 确保在最上层 */
+}
+
+/* 
+ * 轮播指示器点 - 显示轮播进度
+ * 位置：d:\AiCodeTest\pandian2\css\style.css (行 586-596)
+ * 圆点设计，激活时变为胶囊形状
+ */
+.indicator {
+    width: 12px; /* 圆点宽度 */
+    height: 12px; /* 圆点高度 */
+    border-radius: 50%; /* 圆形设计 */
+    background: rgba(255, 255, 255, 0.5); /* 半透明白色 */
+    border: none; /* 无边框 */
+    cursor: pointer; /* 鼠标指针样式 */
+    transition: all 0.3s ease; /* 状态变化动画 */
+}
+
+/* 
+ * 轮播指示器激活状态 - 当前轮播项指示
+ * 位置：d:\AiCodeTest\pandian2\css\style.css (行 597-602)
+ * 通过宽度变化和颜色变化突出当前项
+ */
+.indicator.active {
+    background: #fff; /* 激活时变为实心白色 */
+    width: 30px; /* 激活时变长，形成胶囊形状 */
+    border-radius: 6px; /* 圆角设计 */
+}
+
+/* 
+ * 轮播控制按钮 - 手动切换轮播图
+ * 位置：d:\AiCodeTest\pandian2\css\style.css (行 603-620)
+ * 左右箭头设计，方便用户手动控制
+ */
+.banner-control {
+    position: absolute; /* 绝对定位 */
+    top: 50%; /* 垂直居中 */
+    transform: translateY(-50%); /* 精确垂直居中 */
+    width: 40px; /* 按钮宽度 */
+    height: 40px; /* 按钮高度 */
+    background: rgba(0, 0, 0, 0.3); /* 半透明黑色背景 */
+    color: #fff; /* 白色箭头 */
+    border: none; /* 无边框 */
+    font-size: 24px; /* 箭头字体大小 */
+    cursor: pointer; /* 鼠标指针样式 */
+    display: flex; /* 使用Flexbox布局 */
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    transition: all 0.3s ease; /* 悬停动画效果 */
+    z-index: 3; /* 确保在最上层 */
+}
+
+/* 
+ * 轮播控制按钮悬停效果 - 增强交互反馈
+ * 位置：d:\AiCodeTest\pandian2\css\style.css (行 621-623)
+ */
+.banner-control:hover {
+    background: rgba(0, 0, 0, 0.5); /* 悬停时背景加深 */
+}
+
+/* 
+ * 上一张按钮 - 轮播控制
+ * 位置：d:\AiCodeTest\pandian2\css\style.css (行 624-626)
+ * 位于Banner左侧中央位置
+ */
+.banner-control.prev {
+    left: 20px; /* 距离左侧20px */
+}
+
+/* 
+ * 下一张按钮 - 轮播控制
+ * 位置：d:\AiCodeTest\pandian2\css\style.css (行 627-629)
+ * 位于Banner右侧中央位置
+ */
+.banner-control.next {
+    right: 20px; /* 距离右侧20px */
+}
+
+/* 核心优势 - 参考站简洁卡片布局 */
+/* 核心优势区域 - 专业业务内容展示风格 */
+.advantages {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 60px 0;
+}
+
+/* 区域副标题 */
+.section-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* 优势网格布局 */
+.advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* 优势卡片 */
+.advantage-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.advantage-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* 优势图片容器 */
+.advantage-image {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.advantage-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.advantage-card:hover .advantage-img {
+    transform: scale(1.05);
+}
+
+/* 图片遮罩层 */
+.advantage-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0, 86, 179, 0.8), rgba(0, 123, 255, 0.6));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.advantage-card:hover .advantage-overlay {
+    opacity: 1;
+}
+
+/* 优势编号 */
+.advantage-number {
+    color: #fff;
+    font-size: 48px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 优势内容区域 */
+.advantage-content {
+    padding: 25px 20px 30px;
+}
+
+.advantage-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+/* 优势标签 */
+.advantage-tag {
+    font-size: 13px;
+    color: #0056b3;
+    background: rgba(0, 86, 179, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.advantage-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* 优势特性标签 */
+.advantage-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.feature-item {
+    font-size: 12px;
+    color: #6c757d;
+    background: #f8f9fa;
+    padding: 6px 12px;
+    border-radius: 16px;
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+}
+
+.advantage-card:hover .feature-item {
+    background: #0056b3;
+    color: #fff;
+    border-color: #0056b3;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+    .advantage-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    .advantage-image {
+        height: 200px;
+    }
+    
+    .advantage-content {
+        padding: 20px 18px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .advantages {
+        padding: 40px 0;
+    }
+    
+    .section-subtitle {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .advantage-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .advantage-image {
+        height: 180px;
+    }
+    
+    .advantage-content {
+        padding: 18px 15px 22px;
+    }
+    
+    .advantage-title {
+        font-size: 18px;
+    }
+}
+
+/* 产品介绍 - 参考站图文简约布局 */
+.product {
+    background: #fff;
+}
+.product-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.product-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+@media (min-width: 576px) {
+    .product-item {
+        flex-direction: row;
+        align-items: center;
+    }
+    .product-item:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    .product-text {
+        flex: 1;
+    }
+    .product-img {
+        flex: 1;
+    }
+}
+.product-title {
+    font-size: 18px;
+    color: #0056b3;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.product-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8;
+}
+.product-img {
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* 应用场景 - 参考站简洁网格 */
+/* 
+ * 应用场景区域 - 华沿机器人风格重新设计
+ * 位置：d:\AiCodeTest\pandian2\css\style.css (行 1004-1080)
+ * 设计理念：工业科技风，现代感强，专业布局
+ */
+.scenarios {
+    background: #f8f9fa; /* 浅灰背景，与华沿保持一致 */
+    padding: 60px 0; /* 增加上下内边距，营造专业感 */
+}
+
+.scenario-list {
+    /* 华沿风格的网格布局：响应式且专业 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 增加最小宽度 */
+    gap: 30px; /* 增大间距，符合工业设计规范 */
+    margin-top: 40px; /* 标题与内容的间距 */
+}
+
+.scenario-item {
+    /* 华沿风格的现代卡片设计 */
+    background: #fff;
+    border-radius: 12px; /* 增大圆角，更现代 */
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 更明显的阴影效果 */
+    transition: all 0.3s ease; /* 平滑过渡动画 */
+    position: relative; /* 为悬停效果准备 */
+    cursor: pointer; /* 鼠标悬停样式 */
+}
+
+/* 悬停效果 - 华沿风格的交互体验 */
+.scenario-item:hover {
+    transform: translateY(-8px); /* 卡片向上移动 */
+    box-shadow: 0 8px 30px rgba(0, 86, 179, 0.15); /* 蓝色阴影效果 */
+    border: 2px solid #0056b3; /* 蓝色边框 */
+}
+
+/* 应用场景图片 - 大图展示风格 */
+.scenario-img {
+    height: 220px; /* 增加图片高度，与华沿风格一致 */
+    width: 100%;
+    object-fit: cover; /* 图片自适应裁剪 */
+    transition: all 0.3s ease; /* 图片缩放过渡 */
+}
+
+/* 悬停时图片缩放效果 */
+.scenario-item:hover .scenario-img {
+    transform: scale(1.05); /* 轻微缩放效果 */
+}
+
+/* 场景文字描述区域 - 华沿风格的排版 */
+.scenario-text {
+    padding: 25px; /* 增加内边距，更舒适 */
+    text-align: left; /* 左对齐，更专业的排版 */
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%); /* 微妙的渐变背景 */
+}
+
+/* 场景标题 - 工业风格字体层级 */
+.scenario-title {
+    font-size: 18px; /* 增大字体，更醒目 */
+    font-weight: 700; /* 更粗的字体，体现工业感 */
+    margin-bottom: 12px;
+    color: #0056b3; /* 蓝色标题，与华沿保持一致 */
+    position: relative; /* 为装饰线准备 */
+}
+
+/* 标题装饰线 - 华沿风格的细节设计 */
+.scenario-title::after {
+    content: ''; /* 装饰性下划线 */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: linear-gradient(90deg, #0056b3, #0066cc);
+    border-radius: 2px;
+}
+
+/* 场景描述 - 专业的文字说明 */
+.scenario-desc {
+    font-size: 14px; /* 增大字体，提升可读性 */
+    color: #555; /* 更深的灰色，提升对比度 */
+    line-height: 1.6; /* 优化行高，提升阅读体验 */
+    margin: 0; /* 移除默认边距 */
+}
+
+/* 
+ * 响应式设计 - 华沿风格的移动端适配
+ * 确保在不同设备上都能完美展示应用场景
+ */
+
+/* 平板端适配 - 保持2x2或2x1布局 */
+@media (max-width: 768px) {
+    .scenarios {
+        padding: 40px 0; /* 减少上下内边距 */
+    }
+    
+    .scenario-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 调整最小宽度 */
+        gap: 20px; /* 减少间距 */
+        margin-top: 30px; /* 减少标题与内容的间距 */
+    }
+    
+    .scenario-img {
+        height: 200px; /* 减少图片高度 */
+    }
+    
+    .scenario-text {
+        padding: 20px; /* 减少内边距 */
+    }
+    
+    .scenario-title {
+        font-size: 16px; /* 减小标题字体 */
+    }
+    
+    .scenario-desc {
+        font-size: 13px; /* 减小描述字体 */
+    }
+}
+
+/* 移动端适配 - 改为单列布局 */
+@media (max-width: 480px) {
+    .scenarios {
+        padding: 30px 0; /* 进一步减少内边距 */
+    }
+    
+    .scenario-list {
+        grid-template-columns: 1fr; /* 单列布局 */
+        gap: 15px; /* 减少间距 */
+        margin-top: 25px;
+    }
+    
+    .scenario-item {
+        border-radius: 8px; /* 减小圆角 */
+    }
+    
+    .scenario-img {
+        height: 180px; /* 减少图片高度 */
+    }
+    
+    .scenario-text {
+        padding: 18px; /* 减少内边距 */
+    }
+    
+    .scenario-title {
+        font-size: 15px; /* 减小标题字体 */
+    }
+    
+    .scenario-desc {
+        font-size: 12px; /* 减小描述字体 */
+    }
+    
+    .scenario-title::after {
+        width: 25px; /* 减小装饰线长度 */
+        height: 2px;
+    }
+}
+
+/* 超小屏幕适配 - 优化极小设备的显示 */
+@media (max-width: 360px) {
+    .scenario-list {
+        gap: 12px; /* 进一步减少间距 */
+    }
+    
+    .scenario-img {
+        height: 160px; /* 进一步减少图片高度 */
+    }
+    
+    .scenario-text {
+        padding: 15px; /* 最小内边距 */
+    }
+    
+    .scenario-title {
+        font-size: 14px; /* 最小标题字体 */
+    }
+    
+    .scenario-desc {
+        font-size: 11px; /* 最小描述字体 */
+    }
+}
+
+/* 产品参数 - 参考站表格化简约布局 */
+.params {
+    background: #fff;
+}
+.param-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.param-table th, .param-table td {
+    padding: 12px 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.param-table th {
+    background: #f8f9fa;
+    color: #0056b3;
+    font-weight: 600;
+    font-size: 14px;
+}
+.param-table td {
+    font-size: 14px;
+    color: #666;
+}
+.param-download {
+    text-align: center;
+    margin-top: 20px;
+}
+.param-download-btn {
+    display: inline-block;
+    background: #0056b3;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+/* 产品参数页面布局 */
+.params-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+/* 产品图片容器 */
+.product-image-container {
+    flex-shrink: 0;
+    width: 300px;
+    text-align: center;
+}
+
+/* 产品图片样式 */
+.product-image {
+    width: 100%;
+    max-width: 280px;
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* 产品图片描述 */
+.product-image-desc {
+    margin-top: 12px;
+    font-size: 16px;
+    color: #666;
+    font-style: normal;
+}
+
+/* 参数表格容器 */
+.param-table-container {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 响应式设计：中等屏幕 */
+@media (max-width: 1024px) {
+    .params-content {
+        gap: 25px;
+    }
+    
+    .product-image-container {
+        width: 250px;
+    }
+    
+    .product-image {
+        max-width: 230px;
+    }
+}
+
+/* 响应式设计：小屏幕 - 垂直排列 */
+@media (max-width: 768px) {
+    .params-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .product-image-container {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .product-image {
+        max-width: 280px;
+    }
+}
+
+/* 联系我们 - 参考站简约表单布局 */
+.contact {
+    background: #f8f9fa;
+}
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.contact-info {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.contact-info-title {
+    font-size: 18px;
+    color: #0056b3;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.contact-info-item {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.contact-info-icon {
+    color: #0056b3;
+    font-size: 16px;
+}
+/* 移除在线咨询表单相关样式 */
+
+/* 底部Footer - 参考站简约风格 */
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 14px;
+}
+.footer-content {
+    text-align: center;
+}
+.footer-text {
+    margin-bottom: 10px;
+}
+.footer-copyright {
+    color: #999;
+    font-size: 13px;
+}
+
+/* 平滑滚动 & 基础动画 */
+html {
+    scroll-behavior: smooth;
+}
+.img-hover {
+    transition: transform 0.3s ease;
+}
+.img-hover:hover {
+    transform: scale(1.03);
+}
+
+/* 流量分析 - 展示网站访问统计数据 */
+.traffic-analytics {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 60px 0;
+}
+
+/* 统计卡片容器 */
+.traffic-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* 统计卡片 */
+.traffic-stat-card {
+    background: #fff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.traffic-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* 统计图标 */
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-icon .iconfont {
+    font-size: 24px;
+    color: #fff;
+}
+
+.stat-icon-img {
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    filter: brightness(0) invert(1);
+}
+
+/* 统计内容 */
+.stat-content {
+    flex: 1;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0056b3;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .traffic-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .traffic-stat-card {
+        padding: 20px 15px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .stat-number {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .traffic-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .stat-icon .iconfont {
+        font-size: 20px;
+    }
+    
+    .stat-number {
+        font-size: 20px;
+    }
+}
